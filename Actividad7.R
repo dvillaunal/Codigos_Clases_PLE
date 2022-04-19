@@ -26,8 +26,9 @@ print("Estructura db4")
 str(db4)
 
 # Unir las bases de datos:
-db <- c(db1,db2,db3,db4)
+db.1 <- merge(db1,db2)
+db.2 <- merge(db3,db4)
 
+vehiculos <- merge(db.1,db.2)
 
-merge(db1,db2)
-merge(db3,db4)
+vehiculos
