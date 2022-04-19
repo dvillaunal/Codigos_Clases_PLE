@@ -5,7 +5,7 @@ require(datetime)
 require(janitor)
 
 
-df <-  read_csv("Delito_Hurto_Motocicletas_limpia.csv")
+df <-  read_csv("datos/Delito_Hurto_Motocicletas_limpia.csv")
 
 df$ESTADO.CIVIL %>% table() %>% sort(decreasing = T) %>%
   as.data.frame()

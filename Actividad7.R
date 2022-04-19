@@ -1,9 +1,9 @@
 library(readr)
 #Importar la bases de datos
-db1 <- read_csv("datasets_class7/DB1.csv")
-db2 <- read_csv("datasets_class7/DB2.csv")
-db3 <- read_csv("datasets_class7/DB3.csv")
-db4 <- read_csv("datasets_class7/DB4.csv")
+db1 <- read_csv("datos/DB1.csv")
+db2 <- read_csv("datos/DB2.csv")
+db3 <- read_csv("datos/DB3.csv")
+db4 <- read_csv("datos/DB4.csv")
 
 # dimensiones
 print("Dimensiones db1")

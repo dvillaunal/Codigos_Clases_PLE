@@ -6,10 +6,9 @@
 require(catdata)
 library(tidyverse)
 library(magrittr)
-
+data("heart")
 # NO funciono con el paquete, mejor me redirigí
 #a la ruta donde se encuntran los datasets
-load("heart.rda")
 heart <- as.data.frame(heart)
 
 # Una muestra retrospectiva de varones en una región de
@@ -73,7 +72,7 @@ heart %>% ggplot(aes(x= obesity, y=sbp, fill=obesity))+geom_violin()+
 # Los datos se recogieron de usuarios de Internet reclutados
 # en sitios web francófonos sobre el embarazo y el nacimiento
 
-load("birth.rda")
+data("birth")
 
 
 str(birth)
