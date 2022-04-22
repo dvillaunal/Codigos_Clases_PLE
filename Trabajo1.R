@@ -5,7 +5,7 @@ library(datetime)
 library(knitr)
 evagro <- read_csv("datos/Evaluaciones_Agropecuarias_Municipales_EVA.csv")
 
-evagro %<>% clean_names()
+  evagro %<>% clean_names()
 
 evagro$departamento %<>% as.factor()
 
@@ -61,14 +61,17 @@ papa %<>% filter(ano %in% c("2015", "2016"))
 paste(diff(papa$produccion_t), "Toneladas")
 
 #g
-evagro %>% filter(departamento=="ANTIOQUIA" & cultivo=="PAPA") %>%
-  count(ano, sort = T) %>% head(1) %>% kable()
+maxpapa <- evagro %>% filter(departamento=="ANTIOQUIA" & cultivo=="PAPA") %>%
+  aggregate(produccion_t~ano,.,FUN = sum)
 
+maxpapa <- maxpapa[order(maxpapa$produccion_t, decreasing = T),] 
+
+maxpapa %>% head(1) %>% kable()
 
 # h
 
-evagro %>% count(estado_fisico_produccion, sort = T) %>% 
-  head(1) %>% kable()
+evagro[,c("cultivo", "estado_fisico_produccion")] %>%
+  count(cultivo, estado_fisico_produccion, sort = T) %>% head(1) %>% kable()
 
 #i
 evagro %>% filter(cultivo=="BANANO") %>% count(ano,sort = T) %>% 
