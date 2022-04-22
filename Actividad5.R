@@ -22,7 +22,6 @@ names(data.c)[1] <- "color"
 
 str_match(data.c$color,"NEGRO") %>% table()
 str_match(data.c$color,"AZUL") %>% table()
-
 # Respueta 3: Negro = 5 | Azul = 8
 
 df$GENERO %>% table()
